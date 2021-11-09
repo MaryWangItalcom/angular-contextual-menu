@@ -1,0 +1,9 @@
+<button class="btn btn-primary mt-5 mr-4"
+    (contextmenu)="onRightClick($event)" >
+    {{name}}
+    </button>
+<div class="context-menu" (mouseleave)="closeWindow($event)">
+    <div *ngIf="lists.length > 0 && visible" class="context-menu-items">
+        <a (click)="itemClick(i)" *ngFor="let i of lists" class="context-menu-item">{{i.text}}</a>
+     </div>
+  </div>
